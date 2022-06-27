@@ -11,8 +11,8 @@ namespace Shapes
                 new Circle("Circle", 5),
                 new Square("Square", 4),
 
-                new Sphere("Sphere", 3),
-                new Cube("Cube", 2)};
+                new Sphere("Sphere", 5),
+                new Cube("Cube", 4)};
 
             // Header
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -23,7 +23,15 @@ namespace Shapes
             foreach(var shape in myShapes)
             {
                 // Output shape and its appropriate geometry
-                Console.WriteLine($"The geometry of a {shape} is: {shape.GetGeometry()}\n");
+                Console.WriteLine($"{shape.ToString()}");
+                if(shape is TwoDimensionalShape)
+                {
+                    Console.WriteLine($"This is a 2-D object\n");
+                }
+                else
+                {
+                    Console.WriteLine($"This is a 3-D object\n");
+                }
             }
         }
     }

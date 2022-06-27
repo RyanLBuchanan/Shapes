@@ -52,8 +52,11 @@ namespace Shapes
 
         public override double Area() => Math.PI * Math.Pow(radius, 2);
 
-        public override double GetGeometry() => Area();
+        //public override string GetGeometry() 
+        //{
+        //    return Console.WriteLine($"A {name} with a {nameof(radius)} of {radius.ToString()} has an area of {Area():F2}");
+        //}
 
-        public override string ToString() => $"The area of a {this.name}: {nameof(Math.PI)} * {Math.Pow(radius, 2)} = {this.Area()}";
+        public override string ToString() => $"A {name} with a {nameof(radius)} of {radius.ToString()} has an area of {Area():F2}";
     }
 }

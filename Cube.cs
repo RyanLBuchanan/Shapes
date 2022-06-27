@@ -52,13 +52,14 @@ namespace Shapes
 
         public override double Area() => 6 * Math.Pow(length, 2);
 
-        public override double GetGeometry()
-        {
-            throw new NotImplementedException();
-        }
-
         public override double Volume() => Math.Pow(length, 3);
 
+        //public override string GetGeometry()
+        //{
+        //    Console.WriteLine($"A {name} with a {nameof(length)} of {length.ToString()} has an area of {Area():F2}");
+        //}
 
+        public override string ToString() => $"A {name} with a {nameof(length)} of {length.ToString()} has an area of {Area():F2}" +
+            $" and a volume of {Volume():F2}";
     }
 }

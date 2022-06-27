@@ -23,9 +23,6 @@ namespace Shapes
         public abstract double Volume();  // No implementation 
 
         // Abstract method to be overridden by derived classes
-        public virtual double GetGeometry() => Area();  // No implementation 
-
-        // Return a string replacement of Shape object and properties
-        public override string ToString() => $"{Name} is a three-dimensional shape";
+        public abstract string ToString();  // No implementation 
     }
 }

@@ -53,8 +53,11 @@ namespace Shapes
 
         public override double Area() => length * length;
 
-        public override double GetGeometry() => Area();
-     
-        public override string ToString() => $"The area of a {this.name}: {length} * {length} = {this.Area()}";
+        //public override string GetGeometry()
+        //{ 
+        //    Console.WriteLine($"A {name} with a {nameof(length)} of {length.ToString()} has an area of {Area():F2}");
+        //}
+
+        public override string ToString() => $"A {name} with a {nameof(length)} of {length.ToString()} has an area of {Area():F2}";
     }
 }

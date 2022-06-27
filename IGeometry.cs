@@ -8,6 +8,6 @@ namespace Shapes
 {
     interface IGeometry
     {
-        double GetGeometry();  // Calculate geometry; no implementation 
+        string ToString();  // Calculate geometry; no implementation 
     }
 }
