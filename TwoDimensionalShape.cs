@@ -8,30 +8,32 @@ namespace Shapes
 {
     public abstract class TwoDimensionalShape : Shape , IGeometry
     {
-        public string name;
-
         // One parameter constructor
         public TwoDimensionalShape(string name)
         {
             Name = name;
         }
-        // Property to get set name
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set 
-            {
-                name = value;
-            }
-        }
+        //// Property to get set name
+        //public string Name
+        //{
+        //    get
+        //    {
+        //        return name;
+        //    }
+        //    set 
+        //    {
+        //        name = value;
+        //    }
+        //}
+
+        // Abstract method to be overridden by respective shapes
+        public abstract decimal Area();
+        
+        // Abstract method to be overridden by derived classes
+        //public virtual decimal GetGeometry() => Area();  // No implementation 
 
         // Return a string replacement of Shape object and properties
-        public override string ToString() => $"{name}";
+        public override string ToString() => $"{Name}";
 
-        // Abstract method to be overridden by derived classes
-        public abstract decimal Area();  // No implementation 
     }
 }

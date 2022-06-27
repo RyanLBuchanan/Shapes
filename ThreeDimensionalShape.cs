@@ -8,28 +8,26 @@ namespace Shapes
 {
     public abstract class ThreeDimensionalShape : Shape , IGeometry
     {
-        public string name;
-
         // One parameter constructor
         public ThreeDimensionalShape(string name)
         {
             Name = name;
         }
-        // Property to get set name
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-            set 
-            {
-                name = value;
-            }
-        }
+        //// Property to get set name
+        //public string Name
+        //{
+        //    get
+        //    {
+        //        return name;
+        //    }
+        //    set 
+        //    {
+        //        name = value;
+        //    }
+        //}
 
         // Return a string replacement of Shape object and properties
-        public override string ToString() => $"{name}";
+        public override string ToString() => $"{Name}";
 
         // Abstract method to be overridden by derived classes
         public abstract decimal Area();  // No implementation 
