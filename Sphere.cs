@@ -9,11 +9,14 @@ namespace Shapes
     class Sphere : ThreeDimensionalShape
     {
         public string name;
+        public double radius;
 
         // One parameter constructor
-        public Sphere(string name)
+        public Sphere(string name, double radius)
+            : base(name)
         {
             Name = name;
+            Radius = radius;
         }
         // Property to get set name
         public string Name
@@ -27,19 +30,30 @@ namespace Shapes
                 name = value;
             }
         }
-        public override decimal Area()
+
+        // Property to get set radius
+        public double Radius
         {
-            throw new NotImplementedException();
+            get
+            {
+                return radius;
+            }
+            set
+            {
+                if (value < 1)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value),
+                        value, $"{nameof(Radius)} must be >= 1");
+                }
+
+                radius = value;
+            }
         }
 
-        public override decimal GetGeometry()
-        {
-            throw new NotImplementedException();
-        }
+        public override double Area() => 4 * Math.PI * Math.Pow(radius, 2);
 
-        public override decimal Volume()
-        {
-            throw new NotImplementedException();
-        }
+        public override double GetGeometry() => Area();
+
+        public override double Volume() => (4 / 3) * Math.PI * Math.Pow(radius, 3);
     }
 }

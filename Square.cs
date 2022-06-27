@@ -9,10 +9,10 @@ namespace Shapes
     class Square : TwoDimensionalShape
     {
         public string name;
-        public decimal length;
+        public double length;
         
         // One parameter constructor
-        public Square(string name, decimal length)
+        public Square(string name, double length)
             : base(name)
         {
             Name = name;
@@ -33,7 +33,7 @@ namespace Shapes
         }
 
         // Property to get set length
-        public decimal Length
+        public double Length
         {
             get
             {
@@ -46,15 +46,15 @@ namespace Shapes
                     throw new ArgumentOutOfRangeException(nameof(value),
                         value, $"{nameof(Length)} must be >= 1");
                 }
+
                 length = value;
             }
         }
 
-        public override decimal Area() => length * length;
+        public override double Area() => length * length;
 
-        public override decimal GetGeometry() => Area();
+        public override double GetGeometry() => Area();
      
-
         public override string ToString() => $"The area of a {this.name}: {length} * {length} = {this.Area()}";
     }
 }

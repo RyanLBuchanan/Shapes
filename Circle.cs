@@ -9,11 +9,14 @@ namespace Shapes
     class Circle : TwoDimensionalShape
     {
         public string name;
+        public double radius;
 
         // One parameter constructor
-        public Circle(string name)
+        public Circle(string name, double radius)
+            : base(name)
         {
             Name = name;
+            Radius = radius;
         }
         // Property to get set name
         public string Name
@@ -28,14 +31,29 @@ namespace Shapes
             }
         }
 
-        public override decimal Area()
+        // Property to get set radius
+        public double Radius
         {
-            throw new NotImplementedException();
+            get
+            {
+                return radius;
+            }
+            set
+            {
+                if (value < 1)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(value),
+                        value, $"{nameof(Radius)} must be >= 1");
+                }
+
+                radius = value;
+            }
         }
 
-        public override decimal GetGeometry()
-        {
-            throw new NotImplementedException();
-        }
+        public override double Area() => Math.PI * Math.Pow(radius, 2);
+
+        public override double GetGeometry() => Area();
+
+        public override string ToString() => $"The area of a {this.name}: {nameof(Math.PI)} * {Math.Pow(radius, 2)} = {this.Area()}";
     }
 }

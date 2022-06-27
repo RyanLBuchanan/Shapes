@@ -6,33 +6,26 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    public abstract class ThreeDimensionalShape : Shape , IGeometry
+    public abstract class ThreeDimensionalShape : IGeometry
     {
         // One parameter constructor
         public ThreeDimensionalShape(string name)
         {
             Name = name;
         }
-        //// Property to get set name
-        //public string Name
-        //{
-        //    get
-        //    {
-        //        return name;
-        //    }
-        //    set 
-        //    {
-        //        name = value;
-        //    }
-        //}
+
+        public string Name { get; }
+
+        // Abstract method to be overridden by derived classes
+        public abstract double Area();  // No implementation 
+
+        // Abstract method to be overridden by derived classes
+        public abstract double Volume();  // No implementation 
+
+        // Abstract method to be overridden by derived classes
+        public virtual double GetGeometry() => Area();  // No implementation 
 
         // Return a string replacement of Shape object and properties
-        public override string ToString() => $"{Name}";
-
-        // Abstract method to be overridden by derived classes
-        public abstract decimal Area();  // No implementation 
-
-        // Abstract method to be overridden by derived classes
-        public abstract decimal Volume();  // No implementation 
+        public override string ToString() => $"{Name} is a three-dimensional shape";
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Shapes
 {
@@ -7,11 +8,11 @@ namespace Shapes
         static void Main(string[] args)
         {
             var myShapes = new List<IGeometry>() { 
-                new TwoDimensionalShape("Circle", "Radius"),
-                new TwoDimensionalShape("Square", "Length"),
+                new Circle("Circle", 5),
+                new Square("Square", 4),
 
-                new ThreeDimensionalShape("Sphere", "Radius"),
-                new ThreeDimensionalShape("Cube", "Length")};
+                new Sphere("Sphere", 3),
+                new Cube("Cube", 2)};
 
             // Header
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -24,23 +25,6 @@ namespace Shapes
                 // Output shape and its appropriate geometry
                 Console.WriteLine($"The geometry of a {shape} is: {shape.GetGeometry()}\n");
             }
-
-
-            // Calculation for a circle
-            Console.WriteLine($"The area of a {circle}: {Math.PI} * {Math.Pow(radius, 2)} = {area}");
-            Console.WriteLine();
-
-            // Calculation for a square
-            Console.WriteLine($"The area of a {square}: {length} * {length} = {area}");
-            Console.WriteLine();
-
-            // Calculations for a sphere
-            Console.WriteLine($"The area of a {sphere}: {Math.PI} * {Math.Pow(radius, 2)} = {area}");
-            Console.WriteLine();
-
-            // Calculations for a cube
-            Console.WriteLine($"The area of a {cube}: {length} * {length} = {area}");
-            Console.WriteLine();
         }
     }
 }
