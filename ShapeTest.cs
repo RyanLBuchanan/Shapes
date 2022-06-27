@@ -6,12 +6,25 @@ namespace Shapes
     {
         static void Main(string[] args)
         {
+            var myShapes = new List<IGeometry>() { 
+                new TwoDimensionalShape("Circle", "Radius"),
+                new TwoDimensionalShape("Square", "Length"),
 
-            var circle = new TwoDimensionalShape("Radius");
-            var square = new TwoDimensionalShape("Length");
+                new ThreeDimensionalShape("Sphere", "Radius"),
+                new ThreeDimensionalShape("Cube", "Length")};
 
-            var sphere = new ThreeDimensionalShape("Radius");
-            var cube = new ThreeDimensionalShape("Length");
+            // Header
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Shapes and their respective geometry processed polymorphically:\n");
+            Console.ResetColor();
+
+            // Generically process each element in shapes
+            foreach(var shape in myShapes)
+            {
+                // Output shape and its appropriate geometry
+                Console.WriteLine($"The geometry of a {shape} is: {shape.GetGeometry()}\n");
+            }
+
 
             // Calculation for a circle
             Console.WriteLine($"The area of a {circle}: {Math.PI} * {Math.Pow(radius, 2)} = {area}");
